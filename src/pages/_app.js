@@ -1,12 +1,15 @@
 import '@/styles/globals.css'
-import { Navbar, Footer } from '../../Comopnents'
+import { Navbar, Footer } from '../../Components'
+import { CrowdFundingProvider } from '../../Context/CrowdFunding'
 
 export default function App({ Component, pageProps }) {
   return (
     <>
-      <Navbar />
-      <Component {...pageProps} />
-      <Footer />
+      <CrowdFundingProvider>
+        <Navbar />
+        <Component {...pageProps} />
+        <Footer />
+      </CrowdFundingProvider>
     </>
   )
 }
