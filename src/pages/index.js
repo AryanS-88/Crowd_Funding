@@ -1,13 +1,62 @@
-import React from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { CrowdFundingContext } from '../../Context/CrowdFunding'
 import { Hero, PopUp, Card } from '../../Components'
 
-function index() {
+const Index = () => {
+  const {
+    titleData,
+    getCampaigns,
+    createCampaign,
+    donate,
+    getUserCampaigns,
+    getDonations,
+  } = useContext(CrowdFundingContext)
+
+  const [allcampaign, setAllCampaign] = useState([])
+  const [usercampaign, setUserCampaign] = useState([])
+  const [openModel, setOpenModel] = useState(false)
+  const [donateCampaign, setDonateCampaign] = useState(null)
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const allData = await getCampaigns()
+      const userData = await getUserCampaigns()
+
+      setAllCampaign(allData)
+      setUserCampaign(userData)
+    }
+
+    fetchData()
+  }, [])
+
   return (
-    <div>
-      <h1 className="text-3xl font-bold underline"> Hello world! </h1>
-    </div>
+    <>
+      <Hero titleData={titleData} createCampaign={createCampaign} />
+
+      <Card
+        title="All Listed Campaign"
+        allcampaign={allcampaign}
+        setOpenModel={setOpenModel}
+        setDonate={setDonateCampaign}
+      />
+
+      <Card
+        title="Your Created Campaign"
+        allcampaign={usercampaign}
+        setOpenModel={setOpenModel}
+        setDonate={setDonateCampaign}
+      />
+
+      {openModel && (
+        <PopUp
+          setOpenModel={setOpenModel}
+          getDonations={getDonations}
+          donate={donateCampaign}
+          donateFUnction={donate}
+        />
+      )}
+    </>
   )
 }
 
-export default index
+export default Index
