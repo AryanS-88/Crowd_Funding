@@ -26,7 +26,7 @@ const Footer = () => {
             <h6 className="mb-4 flex items-center justify-center font-semibold uppercase md:justify-start">
               Products
             </h6>
-            <p>
+            <div>
               {productList.map((el, i) => {
                 return (
                   <p className="mb-4" key={i + 1}>
@@ -34,13 +34,13 @@ const Footer = () => {
                   </p>
                 )
               })}
-            </p>
+            </div>
           </div>
           <div className="">
             <h6 className="mb-4 flex items-center justify-center font-semibold uppercase md:justify-start">
               UseFul Links
             </h6>
-            <p>
+            <div>
               {usefulLinks.map((el, i) => {
                 return (
                   <p className="mb-4" key={i + 1}>
@@ -48,7 +48,7 @@ const Footer = () => {
                   </p>
                 )
               })}
-            </p>
+            </div>
           </div>
           <div className="">
             <h6 className="mb-4 flex items-center justify-center font-semibold uppercase md:justify-start">

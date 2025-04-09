@@ -1,4 +1,6 @@
 import React from 'react'
+import { CrowdFundingContext } from '../../Context/CrowdFunding'
+import { Hero, PopUp, Card } from '../../Components'
 
 function index() {
   return (
