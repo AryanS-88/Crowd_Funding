@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Footer = () => {
-  const cryptocrimson = ['Crypto Crimson']
+  const cryptocrimson = ['SeedVerse']
   const productList = ['Market', 'ERC20 Token', 'Donation']
   const contactList = [
     'support@cryptocrimson.com',
@@ -15,10 +15,10 @@ const Footer = () => {
         <div className="grid-1 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div className="">
             <h6 className="mb-4 flex items-center justify-center font-semibold uppercase md:justify-start">
-              Crypto Crimson
+              SeedVerse
             </h6>
             <p>
-              Crypto Crimson is an intermediary platform that facilitates
+              SeedVerse is an intermediary platform that facilitates
               crowdfunding for campaign managers utilizing Ethereum.
             </p>
           </div>
@@ -69,7 +69,7 @@ const Footer = () => {
       <div className="backgorundMAin p-6 text-center">
         <span>© 2025 Copyright:</span>
         <a className="font-semibold" href="https://tailwind-elements.com">
-          Crypto Crimson
+          SeedVerse
         </a>
       </div>
     </footer>
